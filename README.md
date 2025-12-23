@@ -1,71 +1,87 @@
-# Análise do Setor de Marketing - Empresa X
+# 📊 Análise do Setor de Marketing – Empresa X
 
-## Descrição do Projeto
+## 📊 Contexto de Negócio
 
-Este projeto tem como objetivo analisar os investimentos de marketing de uma empresa fictícia em três meios de comunicação: YouTube, Facebook e Jornal. A análise busca determinar se a empresa está obtendo retornos lucrativos e identificar os melhores canais para alocar os recursos de marketing. Ao final, um modelo de regressão é treinado para prever os possíveis retornos com base nos diferentes níveis de investimento.
+Este projeto simula um cenário real de uma empresa comercial que investe em diferentes canais de marketing e precisa decidir **como alocar melhor seu orçamento para maximizar retorno em vendas**.
 
-## Estrutura do Projeto
+No dia a dia corporativo, gestores de marketing enfrentam o desafio de justificar investimentos em múltiplos canais — como mídia digital e mídia tradicional — sem clareza total sobre **quais canais realmente geram impacto nos resultados do negócio**.
 
-O projeto é dividido nas seguintes etapas:
+Os dados utilizados representam **investimentos realizados em diferentes meios de comunicação e o retorno obtido em vendas**, refletindo um problema comum enfrentado por equipes de marketing, BI e análise de dados: transformar gastos em decisões estratégicas orientadas por dados.
 
-1. **Importação do Dataset**  
-   O dataset utilizado é o arquivo CSV `MKT.csv`, fornecido no Desafio 4 do Curso de Data Science da Escola DNC. Ele contém dados de investimentos e retornos em diferentes plataformas de mídia.
+---
 
-2. **Análise Descritiva**  
-   Realiza-se uma análise inicial das características do dataset, com a visualização de dados e geração de estatísticas descritivas. Além disso, é feita a análise das correlações entre as variáveis.
+## 📌 Objetivo da Análise
 
-3. **Análise Exploratória de Dados (EDA)**  
-   Usando as bibliotecas Seaborn e Matplotlib, é realizada uma análise visual para identificar padrões e possíveis outliers nas variáveis de investimento e retorno.
+O objetivo desta análise é **avaliar o impacto dos investimentos em diferentes canais de marketing sobre as vendas**, identificando quais meios apresentam maior potencial de retorno e fornecendo subsídios analíticos para **decisões de realocação de orçamento e otimização de estratégias de marketing**.
 
-4. **Tratamento de Outliers**  
-   Os outliers são identificados utilizando o método de Tukey e tratados para melhorar a qualidade dos dados e a performance dos modelos.
+A análise busca apoiar decisões como:
 
-5. **Modelagem Preditiva**  
-   Três modelos de regressão são treinados e comparados:
-   - **Regressão Linear**
-   - **DecisionTreeRegressor**
-   - **XGBRegressor**
-   
-   O modelo XGBRegressor é otimizado utilizando **GridSearchCV** para encontrar os melhores parâmetros e, em seguida, utilizado para prever os melhores cenários de investimento.
+* Priorização de canais mais eficientes
+* Redução de investimentos com baixo retorno
+* Planejamento de cenários futuros de investimento
 
-## Tecnologias Utilizadas
+---
 
-- **Pandas**: Para manipulação e análise de dados.
-- **Seaborn** e **Matplotlib**: Para visualização de dados.
-- **Scikit-Learn**: Para modelagem de regressão e avaliação dos modelos.
-- **XGBoost**: Para modelagem e otimização do modelo de regressão.
+## 🛠️ Ferramentas Utilizadas
 
-## Conclusões
+As análises foram realizadas utilizando:
 
-A análise dos dados de marketing revelou os seguintes pontos principais:
+* **Python (Pandas, NumPy)** → limpeza, manipulação e estruturação dos dados
+* **Matplotlib e Seaborn** → visualização de padrões, tendências e relações entre investimentos e vendas
+* **Scikit-learn** → construção e avaliação de modelos de regressão como apoio à análise preditiva
+* **XGBoost** → modelagem preditiva avançada para estimar retornos de investimento
+* **Jupyter Notebook** → documentação do processo analítico e reprodutibilidade
 
-- **Facebook**: Apresentou a maior correlação com as vendas, sugerindo que aumentar os investimentos nesta plataforma poderia gerar retornos mais significativos.
-- **Jornal**: Apresentou uma correlação baixa com as vendas, indicando que os investimentos nesta mídia poderiam ser reduzidos ou redirecionados.
-- **YouTube**: Após a modelagem, foi identificado como a plataforma com o maior retorno sobre o investimento, seguido pelo Facebook.
-- **Recomendação**: O investimento no Jornal se mostrou ineficaz e deve ser realocado para plataformas com maior potencial de retorno, como YouTube e Facebook.
+As ferramentas foram utilizadas como suporte à análise e à tomada de decisão, mantendo o foco no problema de negócio.
 
-## Resultados da Modelagem
+---
 
-| Modelo                              | RMSE   |
-|-------------------------------------|--------|
-| **Regressão Linear**                | 1.8316 |
-| **DecisionTreeRegressor**           | 1.2274 |
-| **XGBRegressor (Antes da Otimização)** | 0.8777 |
-| **XGBRegressor (Otimizado)**        | 0.8394 |
+## 📈 Principais Insights
 
-## Como Rodar o Projeto
+* **O investimento em Jornal apresentou baixo impacto nas vendas**, indicando que este canal possui menor eficiência quando comparado aos demais, o que sugere possível desperdício de orçamento.
 
-1. **Clone o repositório:**
-   ```bash
-   git clone https://github.com/Ogarit/Analise_do_Setor_de_Marketing-Empresa_Ficticia.git
-2. **Instale as dependências**:
-   - Se você estiver utilizando um ambiente virtual, crie e ative-o.
-   - Instale as dependências utilizando o requirements.txt:
-     ```bash
-     pip install -r requirements.txt
-3. **Execute o código**:
-   - Para rodar a análise, execute o script principal:
-     ```bash
-     python main.py
-4. **Visualize os Resultados**:
-   - A análise será apresentada via gráficos gerados pelas bibliotecas Seaborn e Matplotlib.
+* **Facebook demonstrou forte relação com o volume de vendas**, sugerindo que investimentos nesse canal tendem a gerar retorno mais previsível e consistente.
+
+* **YouTube apresentou o maior retorno marginal sobre o investimento**, especialmente quando analisado por meio de modelos preditivos, indicando alto potencial de escalabilidade.
+
+* **Modelos não lineares capturaram melhor o comportamento dos dados**, evidenciando que a relação entre investimento e retorno não é puramente linear e depende de combinações entre canais.
+
+Esses insights reforçam a importância de utilizar dados históricos para avaliar eficiência de canais e evitar decisões baseadas apenas em intuição.
+
+---
+
+## 🎯 Possíveis Decisões
+
+Com base nos insights obtidos, seria possível:
+
+* **Reduzir ou descontinuar investimentos em Jornal**, redirecionando o orçamento para canais com maior impacto comprovado.
+
+* **Priorizar investimentos em YouTube e Facebook**, maximizando o retorno sobre o orçamento de marketing.
+
+* **Utilizar modelos preditivos para simular cenários de investimento**, apoiando o planejamento estratégico de campanhas futuras.
+
+* **Apoiar decisões de orçamento com base em dados**, reduzindo riscos e aumentando a eficiência das ações de marketing.
+
+---
+
+## ▶️ Como Executar o Projeto
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/Ogarit/Analise_do_Setor_de_Marketing-Empresa_Ficticia.git
+```
+
+2. Instale as dependências:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Execute o script principal:
+
+```bash
+python main.py
+```
+
+4. Os resultados da análise serão apresentados por meio de visualizações e métricas geradas ao longo da execução.
